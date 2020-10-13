@@ -29,10 +29,10 @@ object RoutingApplication extends App {
   val log = Logging(system.eventStream, RoutingApplication.getClass)
 
   val hopper: GraphHopper = new CARGraphHopper().forServer
-  hopper.setDataReaderFile("map_cache/taipei.osm")
+  hopper.setDataReaderFile("map_cache/map.osm")
   // where to store graphhopper files?
   hopper.setGraphHopperLocation("graph_cache")
-  hopper.setEncodingManager(new EncodingManager("foot"))
+  hopper.setEncodingManager(new EncodingManager("car,foot,bike"))
   hopper.setCHEnabled(false)
 
   // now this can take minutes if it imports or a few seconds for loading

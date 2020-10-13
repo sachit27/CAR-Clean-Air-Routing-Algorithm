@@ -8,7 +8,6 @@ import scala.io.Source
 
 
 object Interpolation {
-  var count = 0
   val data = parseForecastFile("forecast_cache/forecast_20180508_12.json")
 
   case class Entry(devicdId: String, nowP0: Double, nowP1: Double,
@@ -62,8 +61,7 @@ object Interpolation {
   }
 
   def interpolate(lat: Double, lon: Double, seconds: Double) = {
-    count += 1
-    println("Count: " + count)
+
     val element = data.minBy(entry => distance(entry, lat, lon))
 
     val hour = Math.floor(seconds / 3600).toInt

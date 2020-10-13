@@ -1,0 +1,34 @@
+# Map and graph data
+/graph_cache/
+/map_cache/*
+!map_cache/map.osm
+/forecast_cache/
+
+/RUNNING_PID
+/logs/
+/project/*-shim.sbt
+/project/project/
+/project/target/
+/target/*
+
+# ItelliJ IDEA
+/.idea
+
+*.class
+*.log
+
+# sbt specific
+.cache
+.history/
+.lib/
+dist/*
+target/
+lib_managed/
+src_managed/
+project/boot/
+project/plugins/project/
+
+# Scala-IDE specific
+.scala_dependencies
+.worksheet
+.sc
